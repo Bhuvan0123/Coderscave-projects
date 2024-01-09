@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+    <style>
+        html{
+            scroll-behavior: smooth;
+        }
+        body{
+            background-image: url("https://img.freepik.com/free-vector/abstract-watercolor-pastel-background_87374-139.jpg");
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-attachment: fixed;
+            font-family: monospace;
+        }
+        #main{
+            display: flex;
+            flex-direction: column;
+        }
+        #navigation {
+            border-radius: 5px;
+            display: flex;
+            flex-direction: row;
+            justify-content: flex-end;
+            height: 10vh;
+            width: 100%;
+            background-color: rgb(157, 185, 238);
+            flex-wrap: wrap;
+            position: fixed ;
+        }
+        #content{
+            margin-top: 10vh;
+            height: 90vh;
+        }
+        a 
+        {
+            font-size: 20px;
+            line-height: 60px;
+            display: inline-block;  
+            text-decoration: none;
+            text-align: center;
+            border-left: 1px solid rgba(0, 0, 0, 0.452);
+            height: 10vh;
+            width: 150px;
+            color: rgb(17, 5, 5);
+        }
+        a:hover{
+            background-color: rgba(101, 101, 221, 0.815);
+        }
+        #about{
+            text-align: left;
+            font-size: 30px;
+            color: black;
+            padding-top: 30vh;
+            padding-left: 10%;
+            height: 90vh;
+        }
+        #skills{
+            text-align: left;
+            font-size: 25px;
+            padding-top: 50px;
+            padding-left: 10%;
+            height: 100vh;
+            text-decoration: none;
+        }
+        #experiences{
+            text-align: left;
+            font-size: 30px;
+            padding-top: 70px;
+            padding-left: 10%;
+            height: 100vh;
+        }
+        #contacts{
+            text-align: left;
+            font-size: 30px;
+            padding-top: 50px;
+            padding-left: 10%;
+            height: 100vh;
+        }
+    </style>
+</head>
+<body>
+    <div id="main">
+        <nav id="navigation">
+            <a href="#about">About</a>
+            <a href="#skills">Skills</a>
+            <a href="#experiences">Experiences</a>
+            <a href="#contacts">Contact</a>
+        </nav>
+        <div id="content">
+            <section id="about">
+                <h1>Hi, I am Bhuvan Chandra P</h1>
+                <h2>I am student, pursing B.Tech Information Technology II year</h2>
+            </section>
+            <section id="skills"> 
+                <h1 style="color:rgb(179, 92, 236);">Technical Skills</h1>
+                <ol>
+                    <li>Programming</li>
+                    <li>Cybersecurity</li>
+                </ol>
+                <h1 style="color:rgb(179, 92, 236);">Programming Languages Known</h1>
+                <ol>
+                    <li>Python</li>
+                    <li>C, C++</li>
+                    <li>Java</li>
+                    <li>HTML,CSS,Javascript</li>
+                </ol>
+                <h1 style="color:rgb(179, 92, 236);">Soft Skills</h1>
+                <ol>
+                    <li>Communication Skills</li>
+                    <li>Time Management</li>
+                    <li>Problem Solving</li>
+                </ol>
+            </section>
+            <section id="experiences">
+                <h1 style="color:rgb(61, 85, 224);">Courses Done:</h1>
+                <ol>
+                    <li>NPTEL Ethical Hacking</li>
+                    <li>NPTEL Operating System Fundamentals</li>
+                </ol>
+                <h1 style="color:rgb(61, 85, 224);">Courses Inprogess:</h1>
+                <ol>
+                    <li>Google CyberSecurity Professional Certification</li>
+                </ol>
+            </section>
+            <section id="contacts">
+                <h1 style="color: #594d83;">Email:</h1>
+                <h3 style="color: black;">bhuvXXXXX@gmail.com</h3>
+                <h1 style="color: #594d83;">Phone number:</h1>
+                <h3 style="color: black;">12345 XXXXX</h3>
+            </section>
+        </div>
+    </div>
+
+</body>
+</html>
