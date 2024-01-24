@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather</title>
+    <style>
+        body{
+            background-image: url('https://e0.pxfuel.com/wallpapers/313/266/desktop-wallpaper-orange-scenery.jpg');
+            background-attachment: fixed;
+            background-repeat: no-repeat;
+            background-size: cover;
+            text-align: center;
+            font-family: cursive;
+        }
+        #container{
+            margin-top: 100px;
+            margin-left: auto;
+            margin-right: auto;
+            width: 40%;
+            height: auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-between;
+            border-radius: 50px;
+            background-color: rgba(241, 241, 99, 0.288);
+            padding-bottom: 50px;
+            
+        }
+        #search{
+            display: flex;
+            flex:50%;
+            align-items: center;
+            justify-content: space-around;
+            margin-bottom: 20px;
+        }
+        #search input{
+            flex: auto;
+            background-color: lightgoldenrodyellow;
+            border-radius: 50px;
+            text-align: center;
+            text-decoration: none;
+            height: 50px;
+            width: 250px;
+            font-size: 30px;
+            margin-right: 30px;
+        }
+        #search button{
+            flex: auto;
+            background-color: rgba(238, 238, 95, 0.788);
+            border-radius: 10px;
+            height: 50px;
+            width: 80px;
+        }
+        #main{
+            flex:50%;
+            display: none;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-evenly;
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <h1 id="heading">Weather App</h1>
+        <div id="search">
+            <input type="text" name="search_input" id="search_input" placeholder="Enter city name">
+            <button onclick="showweather()">Go</button>
+        </div>
+        <div id="main">
+            <h2 id="city"></h2>
+            <h2 id="temp"></h2>
+            <h2 id="info"></h2>
+        </div>
+    </div>
+
+    <script>
+        const apikey='bc1ccf5300978577edd0b2213d057786';
+        const apiurl='https://api.openweathermap.org/data/2.5/weather';
+        const city_name=document.getElementById('city');
+        const temp=document.getElementById('temp');
+        const info=document.getElementById('info');
+        function showweather(){
+            document.getElementById('main').style.display='flex';
+            let city=document.getElementById('search_input').value;
+            const url = `${apiurl}?q=${city}&appid=${apikey}&units=metric`;
+            fetch(url)
+            .then(Response=>Response.json())
+            .then(d=>{
+                city_name.textContent=d.name;
+                temp.textContent='Temperature: '+`${Math.round(d.main.temp)}°C`;
+                info.textContent=(d.weather[0].description);
+            })
+            .catch(e=>{
+                document.getElementById('city').textContent="Data not found";
+            });
+        }
+    </script>
+</body>
+</html>
